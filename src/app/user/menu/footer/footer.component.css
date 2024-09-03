@@ -1,0 +1,58 @@
+a{
+    color: #ffffff;
+    text-decoration: none;
+    transition: 0.5s;
+    font-size: 20px;
+    font-weight: 400;
+}
+a:hover{
+    color: #4fbeff;
+    transition: 0.5s;
+}
+img{
+    display: block;
+    margin: 0 auto;
+    width: 200px;
+}
+.footer{
+    position: absolute;
+    width: 100%;
+    background: #00223C;
+}
+.footerBox{
+    padding: 10px;
+    display: flex;
+    width: 100%;
+}
+.footerphoneText{
+    width: 100%;
+    display: flex;
+}
+.footerphoneText .footerItems{
+    width: 100%;
+}
+.footerItems{
+    display: grid;
+    justify-content: center;
+    width: 33%;
+    font-family: "Roboto Condensed", sans-serif;
+}
+.line{
+    background: #ffffff;
+    height: 1px;
+}
+p{
+    color: #ffffff;
+    font-size: 18px;
+}
+@media (max-width:500px){
+    .footerBox{
+        display: grid;
+    }
+    .footerItems{
+        width: 100%;
+    }
+    a{
+        padding: 10px;
+    }
+}

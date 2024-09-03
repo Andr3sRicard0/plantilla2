@@ -1,0 +1,81 @@
+img{
+    height: 55px;
+}
+a{
+    text-decoration: none;
+    color: #ffffff;
+    transition: 0.5s;
+}
+a:hover{
+    background: #00223C;
+    color: #4fbeff;
+    transition: 0.5s;
+}
+.navbarBox{
+    z-index: 2;
+    top: 0;
+    width: 100%;
+    position: fixed;
+    background: #00223C;
+    display: flex;
+    height: 58px;
+}
+.navbarBox button{
+    display: none;
+    margin-left: auto;
+    background: #00223C;
+    padding-right: 30px;
+    border: none;
+    color: #ffffff;
+    font-size: 35px;
+    transition: 0.5s;
+}
+.navbarBox button:hover{
+    color: #4fbeff;
+    transition: 0.5s;
+}
+.navbarItems{
+    display: grid;
+    align-items: center;
+}
+.desplegarSubtitles{
+    display: flex;
+    justify-content: center;
+    width: 90%;
+}
+.navbarTitles{
+    font-family: "Roboto Condensed", sans-serif;
+    color: #ffffff;
+    font-size: 25px;
+    font-weight: bold;
+}
+.navbarSubtitles{
+    padding: 10px;
+    text-decoration: none;
+    position: relative;
+    font-family: "Roboto Condensed", sans-serif;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: bold;
+    transition: 0.5s;
+}
+.navbarSubtitles:hover{
+    color: #4fbeff;
+    transition: 0.5s;
+}
+@media (max-width: 750px){
+    .navbarBox button{
+        display: block;
+    }
+    .desplegarSubtitles.show{
+        position: absolute;
+        background: #0d3455;
+        top: 58px;
+        width: 150px;
+        height: 91vh;
+        display: block;
+    }
+    .desplegarSubtitles.hide{
+        display: none;
+    }
+}

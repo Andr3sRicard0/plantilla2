@@ -1,0 +1,60 @@
+.carousel-inner img{
+    width: 100%;
+    height: 500px;
+    object-fit:cover;
+}
+.carousel{
+    z-index: 1;
+}
+body{
+    background: #FFFAE4;
+}
+h1{
+    color: #00223C;
+    font-weight: bold;
+}
+.containerBox {
+    display: flex; /* Hace que los elementos hijos se alineen en línea */
+    overflow-x: auto; /* Añade desplazamiento horizontal */
+    background: #00335a;
+    height: 100%;
+    width: 95%;
+    margin: auto;
+    padding: 10px;
+    scroll-behavior: smooth; /* Hace que el scroll sea suave */
+}
+.containerBox::-webkit-scrollbar {
+    background: #00223C;
+}
+.containerBox::-webkit-scrollbar-thumb {
+    background-color: #007bff; /* Color de la barra de desplazamiento */
+    border-radius: 10px; /* Bordes redondeados */
+    border: 2px solid #00223C; /* Espacio alrededor del thumb */
+}
+.itemsBox {
+    flex: 0 0 auto; /* Impide que los elementos se reduzcan y permite un tamaño específico */
+    margin: 5px;
+    width: 300px; /* Ancho de cada item */
+    background: #f5f5f5;
+    padding: 10px;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.itemsBox img {
+    border-radius: 15px;
+    height: 280px;
+    width: 100%;
+    box-shadow: 3px 3px 3px 3px #dad5c2;
+}
+
+.comprarButton {
+    display: block;
+    margin: 0 auto;
+    width: 80%;
+}
+@media (max-width: 750px){
+    .carousel-inner img{
+        width: 100%;
+        height: 300px;
+    }
+}

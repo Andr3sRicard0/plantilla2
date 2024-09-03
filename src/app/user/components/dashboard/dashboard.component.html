@@ -1,0 +1,102 @@
+<div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="https://images.pexels.com/photos/46798/the-ball-stadion-football-the-pitch-46798.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                alt="...">
+            <div class="carousel-caption d-md-block">
+                <h5>SMG</h5>
+                <p>Eleva tu rendimiento. Estilo y comodidad en cada movimiento</p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="https://images.pexels.com/photos/248547/pexels-photo-248547.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                alt="...">
+            <div class="carousel-caption d-md-block">
+                <h5>SMG</h5>
+                <p>Diseños que inspiran. Ropa deportiva que se adapta a ti</p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="https://images.pexels.com/photos/163452/basketball-dunk-blue-game-163452.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                alt="...">
+            <div class="carousel-caption d-md-block">
+                <h5>SMG</h5>
+                <p>Para quienes desafían sus límites. ¡Vístete con SMG y conquista tu meta!</p>
+            </div>
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+<body>
+    <!--Hombres-->
+    <h1 class="text-center">Hombre</h1>
+    <div class="containerBox">
+        <!-- Interpolación de Angular para mostrar los datos -->
+        <div class="itemsBox" *ngFor="let item of displayedHombre">
+            <img [src]="item.imagenUrl" alt="Imagen del producto" />
+            <h5 class="text-center mt-2">{{ item.nombre }}</h5>
+            <p class="text-center">{{item.detallesCorto}}</p>
+            <p class="text-center"><strong>Precio: </strong>{{item.precio}}</p>
+            <a href="home/hombres/detalles/{{item.id}}" class="btn btn-primary comprarButton">
+                Ver Detalles <i class="fa-solid fa-tshirt"></i>
+            </a>
+        </div>
+    </div>
+    <!-- Botón para cargar más artículos -->
+    <div class="text-center">
+        <button class="btn btn-secondary mt-3" (click)="loadMoreHombreData()">
+            Cargar más
+        </button>
+    </div>
+    <!--Mujeres-->
+    <h1 class="text-center mt-4">Mujer</h1>
+    <div class="containerBox">
+        <!-- Interpolación de Angular para mostrar los datos -->
+        <div class="itemsBox" *ngFor="let item of displayedMujer">
+            <img loading="lazy" [src]="item.imagenUrl" alt="Imagen del producto" />
+            <h5 class="text-center mt-2">{{ item.nombre }}</h5>
+            <p class="text-center">{{ item.detallesCorto }}</p>
+            <p class="text-center"><strong>Precio: </strong> {{ item.precio }} $</p>
+            <a href="home/mujer/detalles/{{item.id}}" class="btn btn-primary comprarButton">
+                Ver Detalles <i class="fa-solid fa-tshirt"></i>
+            </a>
+        </div>
+    </div>
+    <!-- Botón para cargar más artículos -->
+    <div class="text-center">
+        <button class="btn btn-secondary mt-3" (click)="loadMoreMujerData()">
+            Cargar más
+        </button>
+    </div>
+    <!--Niños-->
+    <h1 class="text-center mt-4">Niños</h1>
+    <div class="containerBox">
+        <!-- Interpolación de Angular para mostrar los datos -->
+        <div class="itemsBox" *ngFor="let item of displayedNinos">
+            <img loading="lazy" [src]="item.imagenUrl" alt="Imagen del producto" />
+            <h5 class="text-center mt-2">{{ item.nombre }}</h5>
+            <p class="text-center">{{ item.detallesCorto }}</p>
+            <p class="text-center"><strong>Precio: </strong> {{ item.precio }} $</p>
+            <a href="home/ninos/detalles/{{item.id}}" class="btn btn-primary comprarButton">
+                Ver Detalles <i class="fa-solid fa-tshirt"></i>
+            </a>
+        </div>
+    </div>
+    <!-- Botón para cargar más artículos -->
+    <div class="text-center">
+        <button class="btn btn-secondary mt-3" (click)="loadMoreNinosData()">
+            Cargar más
+        </button>
+    </div>
+    <br>
+</body>

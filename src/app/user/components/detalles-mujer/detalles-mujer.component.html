@@ -1,0 +1,19 @@
+<body>
+    <br>
+    <h1 class="text-center">{{mujer.nombre}}</h1>
+    <div class="detallesBox" *ngIf="mujer">
+        <div class="itemContainer">
+            <img src="{{mujer.imagenUrl}}" alt="">
+        </div>
+        <div class="itemContainer">
+            <p><Strong>Detalles: </Strong> {{mujer.detallesCorto}}</p>
+            <p><strong>Tallas: </strong> Talla S, Talla P, Talla M, Talla L, Talla XL, Talla EG</p>
+            <p><Strong>Precio: </Strong> {{mujer.precio}} $</p>
+            <div class="buttonsContainer">
+                <button class="btn btn-danger buttonStyle">Cancelar <i class="fa-solid fa-ban"></i></button>
+                <button class="btn btn-success buttonStyle">Añadir al Carrito <i class="fa-solid fa-shopping-cart"></i></button>
+            </div>
+        </div>
+    </div>
+    <br>
+</body>
