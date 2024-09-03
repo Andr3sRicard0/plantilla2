@@ -1,0 +1,89 @@
+<body>
+    <br>
+    <!-- Carrousel -->
+    <h1 class="text-center">Carrousel</h1>
+    <div class="buscarBox">
+        <input type="text" [(ngModel)]="searchTermCarrousel" placeholder="Buscar en Carrousel">
+        <a href="" class="btn btn-success ms-2">Crear Nuevo</a>
+    </div>
+    <div class="container-fluid table-responsive">
+        <table class="table table-dark">
+            <thead>
+                <tr>
+                    <th class="text-center" scope="col">ID</th>
+                    <th class="text-center" scope="col">Nombre</th>
+                    <th class="text-center" scope="col">Imagen</th>
+                    <th class="text-center" scope="col">Color del Texto</th>
+                    <th class="text-center">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let carrousel of paginatedCarrousel">
+                    <td class="text-center">{{carrousel.id}}</td>
+                    <td class="text-center">{{carrousel.nombre}}</td>
+                    <td class="text-center">
+                        <img [src]="carrousel.imagenUrl" alt="" width="70px" height="70px">
+                    </td>
+                    <td class="text-center">{{carrousel.color}}</td>
+                    <td class="text-center">
+                        <a class="me-3" href=""><i class="fa-solid fa-pen"></i></a>
+                        <button class="trashIcon" (click)="deleteItemMercaderia(carrousel.id)">
+                            <i class="fa-solid fa-trash"></i>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="pagination d-flex align-items-center">
+            <button (click)="changePageCarrousel(currentPageCarrousel - 1)"
+                [disabled]="currentPageCarrousel === 1">Anterior</button>
+            <span>Página {{ currentPageCarrousel }} de {{ totalPagesCarrousel }}</span>
+            <button (click)="changePageCarrousel(currentPageCarrousel + 1)"
+                [disabled]="currentPageCarrousel === totalPagesCarrousel">Siguiente</button>
+        </div>
+    </div>
+    <br>
+    <!-- Mercaderia -->
+    <h1 class="text-center">Mercaderia</h1>
+    <div class="buscarBox">
+        <input type="text" [(ngModel)]="searchTermMercaderia" placeholder="Buscar en Mercaderia">
+        <a href="" class="btn btn-success ms-2">Crear Nuevo</a>
+    </div>
+    <div class="container-fluid table-responsive">
+        <table class="table table-dark">
+            <thead>
+                <tr>
+                    <th class="text-center" scope="col">ID</th>
+                    <th class="text-center" scope="col">Nombre</th>
+                    <th class="text-center" scope="col">Imagen</th>
+                    <th class="text-center" scope="col">Precio</th>
+                    <th class="text-center">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let mercaderia of paginatedMercaderia">
+                    <td class="text-center">{{mercaderia.id}}</td>
+                    <td class="text-center">{{mercaderia.nombre}}</td>
+                    <td class="text-center">
+                        <img [src]="mercaderia.imagenUrl" alt="" width="70px" height="70px">
+                    </td>
+                    <td class="text-center">$ {{mercaderia.precio}}</td>
+                    <td class="text-center">
+                        <a class="me-3" href=""><i class="fa-solid fa-pen"></i></a>
+                        <button class="trashIcon" (click)="deleteItemMercaderia(mercaderia.id)">
+                            <i class="fa-solid fa-trash"></i>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="pagination d-flex align-items-center">
+            <button (click)="changePageMercaderia(currentPageMercaderia - 1)"
+                [disabled]="currentPageMercaderia === 1">Anterior</button>
+            <span>Página {{ currentPageMercaderia }} de {{ totalPagesMercaderia }}</span>
+            <button (click)="changePageMercaderia(currentPageMercaderia + 1)"
+                [disabled]="currentPageMercaderia === totalPagesMercaderia">Siguiente</button>
+        </div>
+    </div>
+    <br>
+</body>

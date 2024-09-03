@@ -12,8 +12,8 @@ p{
     display: flex;
     width: 95%;
     margin: auto;
-    background: #00335a;
-    color: #ffffff;
+    background: #ffffff;
+    color: #000000;
 }
 .itemContainer{
     display: grid;

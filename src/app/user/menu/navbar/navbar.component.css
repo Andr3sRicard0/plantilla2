@@ -53,9 +53,9 @@ a:hover{
     padding: 10px;
     text-decoration: none;
     position: relative;
-    font-family: "Roboto Condensed", sans-serif;
+    font-family: "Poppins", sans-serif;
     color: #ffffff;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
     transition: 0.5s;
 }
@@ -71,7 +71,7 @@ a:hover{
         position: absolute;
         background: #0d3455;
         top: 58px;
-        width: 150px;
+        width: 200px;
         height: 91vh;
         display: block;
     }

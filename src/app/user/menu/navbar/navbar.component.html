@@ -9,27 +9,30 @@
     </div>
     <!--Fin Item-->
     <div [ngClass]="{'show': menuOpen, 'hide': !menuOpen}" class="desplegarSubtitles">
-        <!--Inicio Item-->
+        <!--Item-->
         <div class="navbarItems">
-            <a href=""><div class="navbarSubtitles">
-                Hombre
+            <a href="home/dashboard"><div class="navbarSubtitles">
+                Inicio <i class="fa-solid fa-house-user"></i>
             </div></a>
         </div>
-        <!--Fin Item-->
-        <!--Inicio Item-->
+        <!--Item-->
         <div class="navbarItems">
-            <a href=""><div class="navbarSubtitles">
-                Mujer
+            <a href="home/dashboard#mercaderia"><div class="navbarSubtitles">
+                Mercaderia <i class="fa-solid fa-shirt"></i>
             </div></a>
         </div>
-        <!--Fin Item-->
-        <!--Inicio Item-->
+        <!--Item-->
         <div class="navbarItems">
-            <a href=""><div class="navbarSubtitles">
-                Niños
+            <a href="home/dashboard"><div class="navbarSubtitles">
+                Nosotros <i class="fa-solid fa-user"></i>
             </div></a>
         </div>
-        <!--Fin Item-->
+        <!--Item-->
+        <div class="navbarItems">
+            <a href="home/dashboard#contactanos"><div class="navbarSubtitles">
+                Contactanos <i class="fa-solid fa-phone"></i>
+            </div></a>
+        </div>
     </div>
     <button (click)="toogleMenu()"><i class="fa-solid fa-bars"></i></button>
 </div>

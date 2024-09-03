@@ -1,0 +1,90 @@
+body {
+    background: #FFFAE4;
+}
+
+h1 {
+    color: #00223C;
+}
+
+ p {
+    font-size: 20px;
+}
+
+.detallesBox {
+    border: 2px dashed #00223C;
+    border-radius: 10px;
+    display: flex;
+    width: 95%;
+    margin: auto;
+    background: #ffffff;
+    color: #000000;
+}
+.infoStyle{
+    font-size: 12px;
+    font-weight: bold;
+}
+.itemContainer {
+    border-radius: 10px;
+    display: grid;
+    padding: 10px;
+    width: 50%;
+}
+
+.buttonsContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttonStyle {
+    margin: 10px;
+    height: 70px;
+    width: 50%;
+}
+
+.zoomContainer {
+    position: relative;
+    width: 100%;
+    margin: auto;
+}
+
+.zoomImage {
+    cursor:zoom-in;
+    width: 100%;
+    height: 500px;
+    border-radius: 10px;
+}
+
+.zoomLens {
+    position: absolute;
+    /* Posición absoluta dentro del contenedor */
+    border: 2px solid #000;
+    /* Borde del cuadro de zoom */
+    width: 200px;
+    /* Ancho del cuadro de zoom */
+    height: 200px;
+    /* Altura del cuadro de zoom */
+    display: none;
+    /* Oculto por defecto */
+    background-repeat: no-repeat;
+    pointer-events: none;
+    /* El cuadro no debe interferir con los eventos del ratón */
+}
+
+@media (max-width: 750px) {
+    .detallesBox {
+        display: grid;
+    }
+
+    .itemContainer {
+        width: 100%;
+    }
+    .zoomLens{
+        display: none;
+        overflow: hidden;
+    }
+    .zoomImage{
+        width: 100%;
+        height: 300px;
+    }
+}

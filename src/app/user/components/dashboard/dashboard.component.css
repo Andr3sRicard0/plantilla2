@@ -1,60 +1,129 @@
-.carousel-inner img{
+
+.carousel-inner img {
     width: 100%;
     height: 500px;
-    object-fit:cover;
+    object-fit: cover;
 }
-.carousel{
+
+.carousel {
     z-index: 1;
 }
-body{
+
+body {
     background: #FFFAE4;
 }
-h1{
+
+h1 {
     color: #00223C;
     font-weight: bold;
 }
+
 .containerBox {
-    display: flex; /* Hace que los elementos hijos se alineen en línea */
-    overflow-x: auto; /* Añade desplazamiento horizontal */
+    display: flex;
+    flex-wrap: wrap;
     background: #00335a;
-    height: 100%;
-    width: 95%;
-    margin: auto;
-    padding: 10px;
-    scroll-behavior: smooth; /* Hace que el scroll sea suave */
+    width: 100%;
 }
-.containerBox::-webkit-scrollbar {
-    background: #00223C;
+
+.containerBox:hover {
+    transition: opacity 0.6s ease-in-out;
 }
-.containerBox::-webkit-scrollbar-thumb {
-    background-color: #007bff; /* Color de la barra de desplazamiento */
-    border-radius: 10px; /* Bordes redondeados */
-    border: 2px solid #00223C; /* Espacio alrededor del thumb */
-}
+
 .itemsBox {
-    flex: 0 0 auto; /* Impide que los elementos se reduzcan y permite un tamaño específico */
-    margin: 5px;
-    width: 300px; /* Ancho de cada item */
-    background: #f5f5f5;
-    padding: 10px;
-    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    border-radius: 10px;
+    background: #ffffff;
+    width: calc(25% - 20px);
+    margin: 10px;
+    transition: 0.5s;
+    border: 2px dashed #00223C;
+}
+
+.itemsBox:hover {
+    background: #b8b8b8;
+    transition: 0.5s;
 }
 
 .itemsBox img {
-    border-radius: 15px;
-    height: 280px;
+    border-radius: 10px;
+    display: block;
+    margin: auto;
     width: 100%;
-    box-shadow: 3px 3px 3px 3px #dad5c2;
+    height: 300px;
+    transition: transform 0.4s ease;
+}
+.bienvenidaContainer{
+    display: flex;
+    width: 100%;
+    background: #ffffff;
+    margin-bottom: 10px;
+}
+.bienvenidaItems{
+    display: grid;
+    align-items: center;
+    width: 50%;
+}
+.bienvenidaItems img{
+    width: 100%;
+    height: 450px;
+}
+.itemsBox img:hover {
+    border: 2px dashed #00223C;
+    transform: scale(0.9);
+    transition: transform 0.4s ease;
 }
 
-.comprarButton {
-    display: block;
-    margin: 0 auto;
-    width: 80%;
+.itemsBox a {
+    font-weight: bold;
+    background: #00223C;
+    border: none;
+    margin: 10px;
+    transition: 0.5s;
 }
-@media (max-width: 750px){
-    .carousel-inner img{
+
+.itemsBox a:hover {
+    transform: scale(1.1);
+    background: #00223C;
+    /* ejex ejey borrosidad alcance color*/
+    box-shadow: 0px 0px 20px 5px #003e6d;
+    transition: 0.5s;
+}
+
+@media(max-width:750px) {
+    .itemsBox {
+        background: #ffffff;
+        width: calc(50% - 20px);
+        margin: 10px;
+    }
+
+    .carousel-inner img {
+        height: 400px;
+    }
+    .bienvenidaContainer{
+        display: grid;
+    }
+    .bienvenidaItems{
+        display: grid;
+        text-align: center;
         width: 100%;
+    }
+    .bienvenidaItems img{
+        width: 100%;
+    }
+}
+
+@media(max-width:550px) {
+    .containerBox {
+        display: grid;
+    }
+    .itemsBox {
+        background: #ffffff;
+        width: calc(100% - 20px);
+        margin: 10px;
+    }
+    .carousel-inner img{
         height: 300px;
+    }
+    .bienvenidaItems img{
+        display: none;
     }
 }

@@ -1,0 +1,55 @@
+body {
+    background: #FFFAE4;
+}
+
+.trashIcon {
+    background: none;
+    border: none;
+    color: #ff0000;
+    transition: 0.3s;
+}
+
+.trashIcon:hover {
+    color: #a72323;
+    transition: 0.3s;
+}
+
+.buscarBox {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.buscarBox input {
+    border-radius: 10px;
+    width: 80%;
+    border: 1px solid #349aff;
+    display: flex;
+    justify-content: center;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.pagination button {
+    margin: 0 5px;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    background-color: #349aff;
+    cursor: pointer;
+    color: #ffffff;
+}
+
+span {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.pagination button:disabled {
+    background-color: #ff6e6e;
+    cursor: not-allowed;
+}

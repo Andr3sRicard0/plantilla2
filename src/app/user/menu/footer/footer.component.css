@@ -1,9 +1,10 @@
 a{
+    font-family: "Poppins", sans-serif;
     color: #ffffff;
     text-decoration: none;
     transition: 0.5s;
-    font-size: 20px;
-    font-weight: 400;
+    font-size: 18px;
+    font-weight: 500;
 }
 a:hover{
     color: #4fbeff;
@@ -36,6 +37,11 @@ img{
     justify-content: center;
     width: 33%;
     font-family: "Roboto Condensed", sans-serif;
+}
+.footerItems{
+    font-weight: bold;
+    font-size: 20px;
+    font-family: "Poppins", sans-serif;
 }
 .line{
     background: #ffffff;

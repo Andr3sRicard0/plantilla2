@@ -9,6 +9,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { DetallesHombreComponent } from './detalles-hombre/detalles-hombre.component';
 import { DetallesMujerComponent } from './detalles-mujer/detalles-mujer.component';
 import { DetallesNinosComponent } from './detalles-ninos/detalles-ninos.component';
+import { AdminComponentModule } from 'src/app/admin/components/admin-component.module';
+import { DetallesComponent } from './detalles/detalles.component';
 @NgModule({
   declarations: [
     HomeComponent,
@@ -16,7 +18,8 @@ import { DetallesNinosComponent } from './detalles-ninos/detalles-ninos.componen
     DashboardComponent,
     DetallesHombreComponent,
     DetallesMujerComponent,
-    DetallesNinosComponent
+    DetallesNinosComponent,
+    DetallesComponent
   ],
   exports:[
     HomeComponent,
@@ -26,7 +29,8 @@ import { DetallesNinosComponent } from './detalles-ninos/detalles-ninos.componen
     CommonModule,
     RouterModule,
     MenuModule,
-    HttpClientModule
+    HttpClientModule,
+    AdminComponentModule
   ]
 })
 export class UserComponentModule { }
