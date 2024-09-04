@@ -8,6 +8,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 //import { DetallesNinosComponent } from './detalles-ninos/detalles-ninos.component';
 import { AdminComponentRoutingModule } from 'src/app/admin/components/admin-component-routing.module';
 import { DetallesComponent } from './detalles/detalles.component';
+import { NosotrosComponent } from './nosotros/nosotros.component';
 
 const routes : Routes = [
   {path:'', redirectTo:'home/dashboard', pathMatch:'full'},
@@ -15,6 +16,7 @@ const routes : Routes = [
   {path:'home', component:HomeComponent, children:[
     {path:'dashboard', component:DashboardComponent},
     {path:'dashboard/detalles/:id', component:DetallesComponent},
+    {path:'dashboard/nosotros', component:NosotrosComponent},
     //{path:'mujer/detalles/:id', component:DetallesMujerComponent},
     //{path:'ninos/detalles/:id', component:DetallesNinosComponent},
     {path:'notFound', component:NotFoundComponent}

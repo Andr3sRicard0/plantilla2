@@ -11,6 +11,7 @@ import { DetallesMujerComponent } from './detalles-mujer/detalles-mujer.componen
 import { DetallesNinosComponent } from './detalles-ninos/detalles-ninos.component';
 import { AdminComponentModule } from 'src/app/admin/components/admin-component.module';
 import { DetallesComponent } from './detalles/detalles.component';
+import { NosotrosComponent } from './nosotros/nosotros.component';
 @NgModule({
   declarations: [
     HomeComponent,
@@ -19,7 +20,8 @@ import { DetallesComponent } from './detalles/detalles.component';
     DetallesHombreComponent,
     DetallesMujerComponent,
     DetallesNinosComponent,
-    DetallesComponent
+    DetallesComponent,
+    NosotrosComponent
   ],
   exports:[
     HomeComponent,
