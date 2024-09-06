@@ -58,9 +58,14 @@ export class DetallesComponent {
     const nextLength = currentLength + this.itemsToLoad;
     if (currentLength >= this.dataMercaderia.length) {
       Swal.fire({
-        title: "No hay más items que cargar",
-        text: "Son todos los artículos disponibles",
-        icon: "info"
+        title: "No hay más diseños por el momento.",
+        text: "Mantente atento a nuestros sitios para ser de los primeros en adquirir nuestros productos.",
+        icon: "info",
+        iconColor: "#96003c",
+        confirmButtonText: "Entendido",
+        confirmButtonColor: "#96003c", // Color del botón
+        background: "#2c2c2c", // Color de fondo del alert
+        color: "#ffffff" // Color del texto del alert
       });
       return;
     }

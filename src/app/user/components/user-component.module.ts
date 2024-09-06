@@ -12,6 +12,7 @@ import { DetallesNinosComponent } from './detalles-ninos/detalles-ninos.componen
 import { AdminComponentModule } from 'src/app/admin/components/admin-component.module';
 import { DetallesComponent } from './detalles/detalles.component';
 import { NosotrosComponent } from './nosotros/nosotros.component';
+import { DesignModule } from '../design/design.module';
 @NgModule({
   declarations: [
     HomeComponent,
@@ -32,6 +33,7 @@ import { NosotrosComponent } from './nosotros/nosotros.component';
     RouterModule,
     MenuModule,
     HttpClientModule,
+    DesignModule,
     AdminComponentModule
   ]
 })

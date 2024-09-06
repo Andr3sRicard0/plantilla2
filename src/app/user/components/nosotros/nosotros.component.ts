@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component } from '@angular/core';
+import { ChangeDetectorRef, Component, ElementRef, ViewChild } from '@angular/core';
 import * as XLSX from 'xlsx';
 import { HttpClient } from '@angular/common/http';
 import Swal from 'sweetalert2';
@@ -9,9 +9,10 @@ import Swal from 'sweetalert2';
   styleUrls: ['./nosotros.component.css']
 })
 export class NosotrosComponent {
+  @ViewChild('mensajeWhatsapp') mensajeWhatsapp!: ElementRef<HTMLTextAreaElement>;
+  phoneNumber: number = 593984677719;
   currentSlide = 0;
   slides: HTMLElement[] = [];
-
   dataCarrousel: any[] = [];
 
   constructor(private http: HttpClient, private cdr: ChangeDetectorRef) { }
@@ -44,35 +45,41 @@ export class NosotrosComponent {
       this.slides[this.currentSlide].classList.add('active');
     }, 10000); // Cambia cada 10 segundos
   }
-  validarYEnviar() {
-    const nombre = (<HTMLInputElement>document.getElementById('nombre')).value;
-    const contactame = (<HTMLInputElement>document.getElementById('contactame')).value;
-    const asunto = (<HTMLInputElement>document.getElementById('asunto')).value;
-
-    if (!nombre || !contactame || !asunto) {
+  enviarMensaje() {
+    const mensajeTextArea: string = this.mensajeWhatsapp.nativeElement.value;
+    if (mensajeTextArea == "") {
       Swal.fire({
-        title: "Rellene todos los campos",
-        text: "Requerimos de toda su información para comunicarnos con usted",
-        icon: "error"
+        title: "Mensaje Vacío",
+        text: "Rellena el motivo por el cual quieres contactarnos.",
+        icon: "error",
+        confirmButtonText: "Entendido",
+        confirmButtonColor: "#fc030b", // Color del botón
+        background: "#2c2c2c", // Color de fondo del alert
+        color: "#ffffff" // Color del texto del alert
       });
-      return; // Detener la ejecución si hay campos vacíos
+      return;
     }
     Swal.fire({
-      title: "¿Estás seguro de enviar el email?",
-      icon: "question",
-      showDenyButton: true,
-      confirmButtonText: "Enviar",
-      denyButtonText: "Cancelar",
+      title: "¿Estás seguro de enviar el mensaje?",
+      text: "Esto enviará el mensaje que has escrito.",
+      icon: "warning",
+      showCancelButton: true, // Muestra el botón de cancelar
+      confirmButtonText: "Enviar Mensaje",
+      cancelButtonText: "Cancelar",
+      confirmButtonColor: "#008f96",
+      cancelButtonColor: "#dc3545",
+      background: "#2c2c2c",
+      color: "#ffffff",
+      reverseButtons: true
     }).then((result) => {
       if (result.isConfirmed) {
-        Swal.fire("Enviando correo, Redirigiendo!!!", "", "success");
-      } else if (result.isDenied) {
-        Swal.fire("Correo no enviado", "", "error");
+        const message = `${mensajeTextArea}`;
+        const encodedMessage = encodeURIComponent(message);
+        const whatsappUrl = `https://api.whatsapp.com/send/?phone=${encodeURIComponent(this.phoneNumber)}&text=${encodedMessage}&type=phone_number&app_absent=0`;
+        window.location.href = whatsappUrl;
+      } else {
         return;
       }
     });
-    // Si todos los campos están llenos, envía el formulario
-    const formulario = <HTMLFormElement>document.getElementById('contactForm');
-    formulario.submit(); // Enviar el formulario manualmente
   }
 }

@@ -10,7 +10,6 @@
     </div>
     <!--Carrousel Fin-->
 </section>
-
 <body>
     <br>
     <section>
@@ -43,6 +42,8 @@
             </div>
         </div>
     </section>
+    <br>
+    <app-separador-animado></app-separador-animado>
     <section>
         <div class="container-fluid">
             <h1 class="text-center">Contáctanos</h1>
@@ -59,26 +60,11 @@
                     <img src="https://www.linkaform.com/hubfs/linkaform-2021/img-contactanos.png" alt="">
                 </div>
                 <div class="aboutItems">
-                    <div class="container">
-                        <a
-                            href="https://www.instagram.com/smg_ropa_deportiva1999/?utm_source=ig_web_button_share_sheet">
-                            <span class="link-text">
-                                <h4 class="mt-3">Instagram <i class="fa-brands fa-instagram"></i></h4>
-                            </span>
-                        </a>
-                        <br>
-                        <a href="https://www.tiktok.com/@smgropadeportiva_1999?is_from_webapp=1&sender_device=pc">
-                            <span class="link-text">
-                                <h4 class="mt-3">Tik Tok <i class="fa-brands fa-tiktok"></i></h4>
-                            </span>
-                        </a>
-                        <br>
-                        <a href="https://wa.me/593983101686?text=Hola%20SMG,%20quisiera%20saber%20m%C3%A1s%20sobre%20sus%20productos!!!!"
-                            target="_blank">
-                            <span class="link-text">
-                                <h4 class="mt-3">Whatsapp <i class="fa-brands fa-whatsapp"></i></h4>
-                            </span>
-                        </a>
+                    <div class="container colotText">
+                        <h4 class="text-center mb-3">Si deseas contactarnos, puedes hacerlo a través de WhatsApp.</h4>
+                        <h6 class="mb-3">Mensaje</h6>
+                        <textarea class="mb-3" name="" id="mensajeWhatsapp" #mensajeWhatsapp></textarea>
+                        <button (click)="enviarMensaje()" class="btn btn-danger" >Enviar Mensaje</button>
                     </div>
                 </div>
             </div>
