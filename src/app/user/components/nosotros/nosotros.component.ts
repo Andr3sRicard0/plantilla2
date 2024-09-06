@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectorRef, Component } from '@angular/core';
 import * as XLSX from 'xlsx';
 import { HttpClient } from '@angular/common/http';
 import Swal from 'sweetalert2';
@@ -9,11 +9,17 @@ import Swal from 'sweetalert2';
   styleUrls: ['./nosotros.component.css']
 })
 export class NosotrosComponent {
+  currentSlide = 0;
+  slides: HTMLElement[] = [];
+
   dataCarrousel: any[] = [];
-  constructor(private http: HttpClient) { }
+
+  constructor(private http: HttpClient, private cdr: ChangeDetectorRef) { }
+
   ngOnInit(): void {
     this.loadCarrusel();
   }
+
   loadCarrusel() {
     this.http.get('assets/bd/carrouselData.xlsx', { responseType: 'arraybuffer' }).subscribe((response) => {
       const data = new Uint8Array(response);
@@ -22,8 +28,21 @@ export class NosotrosComponent {
       const worksheet = workbook.Sheets[firstSheetName];
 
       this.dataCarrousel = XLSX.utils.sheet_to_json(worksheet);
-      //this.displayedHombre = this.dataHombre.slice(0, this.itemsToLoad); // Mostramos los primeros 8 elementos
+
+      // Forzar la detección de cambios después de cargar los datos
+      this.cdr.detectChanges();
+
+      // Inicializar el carrusel después de que el DOM se haya actualizado
+      this.slides = Array.from(document.querySelectorAll('.slideItem'));
+      this.startCarousel();
     });
+  }
+  startCarousel() {
+    setInterval(() => {
+      this.slides[this.currentSlide].classList.remove('active');
+      this.currentSlide = (this.currentSlide + 1) % this.slides.length;
+      this.slides[this.currentSlide].classList.add('active');
+    }, 10000); // Cambia cada 10 segundos
   }
   validarYEnviar() {
     const nombre = (<HTMLInputElement>document.getElementById('nombre')).value;

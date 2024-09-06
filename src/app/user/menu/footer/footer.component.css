@@ -7,7 +7,7 @@ a{
     font-weight: 500;
 }
 a:hover{
-    color: #4fbeff;
+    color: #a0a0a0;
     transition: 0.5s;
 }
 img{
@@ -18,7 +18,7 @@ img{
 .footer{
     position: absolute;
     width: 100%;
-    background: #00223C;
+    background: #000000;
 }
 .footerBox{
     padding: 10px;

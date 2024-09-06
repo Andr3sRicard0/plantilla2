@@ -1,27 +1,41 @@
 
-.carousel-inner img {
+/*Carrusel Inicio*/
+.carrusel {
     width: 100%;
     height: 500px;
+    position: relative;
+    overflow: hidden;
+    transition: 1s;
+}
+.carrusel img {
     object-fit: cover;
+    position: absolute;
+    width: 100%;
+    height: 500px;
+    opacity: 0;
+    transition: opacity 2s ease;
 }
-
-.carousel {
-    z-index: 1;
+.slideItem.active img{
+    opacity: 1;
 }
+.slideItem.active .textBoxCarousel{
+    opacity: 1;
+}
+/*Carrusel Fin*/
 
 body {
-    background: #FFFAE4;
+    background: #eeeeee;
 }
 
 h1 {
-    color: #00223C;
+    color: #000000;
     font-weight: bold;
 }
 
 .containerBox {
     display: flex;
     flex-wrap: wrap;
-    background: #00335a;
+    background: #1a1a1a;
     width: 100%;
 }
 
@@ -30,28 +44,78 @@ h1 {
 }
 
 .itemsBox {
-    border-radius: 10px;
     background: #ffffff;
     width: calc(25% - 20px);
     margin: 10px;
     transition: 0.5s;
-    border: 2px dashed #00223C;
+    box-shadow: 3px 3px 3px 3px #494949;
+    overflow: hidden; /* Asegúrate de que el efecto no desborde el contenedor */
 }
 
-.itemsBox:hover {
-    background: #b8b8b8;
-    transition: 0.5s;
+.itemsBox:hover img {
+    transform: scale(0.9);
+    border: 3px dashed #000000;
+    transition: transform 0.4s ease;
 }
 
 .itemsBox img {
-    border-radius: 10px;
     display: block;
     margin: auto;
     width: 100%;
     height: 300px;
+    transition: transform 0.4s ease, border 0.4s ease;
+}
+
+
+.itemsBox {
+    background: #ffffff;
+    width: calc(25% - 20px);
+    margin: 10px;
+    transition: 0.5s;
+    box-shadow: 3px 3px 3px 3px #494949;
+    overflow: hidden; /* Asegúrate de que el efecto no desborde el contenedor */
+}
+
+.itemsBox:hover img {
+    transform: scale(0.9);
+    border: 3px dashed #000000;
     transition: transform 0.4s ease;
 }
+
+.itemsBox img {
+    display: block;
+    margin: auto;
+    width: 100%;
+    height: 300px;
+    transition: transform 0.4s ease, border 0.4s ease;
+}
+
+
+.itemsBox {
+    background: #ffffff;
+    width: calc(25% - 20px);
+    margin: 10px;
+    transition: 0.5s;
+    box-shadow: 3px 3px 3px 3px #494949;
+    overflow: hidden; /* Asegúrate de que el efecto no desborde el contenedor */
+}
+
+.itemsBox:hover img {
+    transform: scale(0.9);
+    border: 3px dashed #000000;
+    transition: transform 0.4s ease;
+}
+
+.itemsBox img {
+    display: block;
+    margin: auto;
+    width: 100%;
+    height: 300px;
+    transition: transform 0.4s ease, border 0.4s ease;
+}
+
 .bienvenidaContainer{
+    border: 1px solid #000000;
     display: flex;
     width: 100%;
     background: #ffffff;
@@ -66,37 +130,79 @@ h1 {
     width: 100%;
     height: 450px;
 }
-.itemsBox img:hover {
-    border: 2px dashed #00223C;
+.itemsBox {
+    background: #ffffff;
+    width: calc(25% - 20px);
+    margin: 10px;
+    transition: 0.5s;
+    box-shadow: 3px 3px 3px 3px #494949;
+    overflow: hidden; /* Asegúrate de que el efecto no desborde el contenedor */
+}
+
+.itemsBox:hover img {
     transform: scale(0.9);
+    border: 3px dashed #000000;
     transition: transform 0.4s ease;
+}
+
+.itemsBox img {
+    display: block;
+    margin: auto;
+    width: 100%;
+    height: 300px;
+    transition: transform 0.4s ease, border 0.4s ease;
 }
 
 .itemsBox a {
     font-weight: bold;
-    background: #00223C;
+    background: #000000;
     border: none;
+    border-radius: 0;
     margin: 10px;
     transition: 0.5s;
 }
 
 .itemsBox a:hover {
     transform: scale(1.1);
-    background: #00223C;
+    background: #161616;
     /* ejex ejey borrosidad alcance color*/
-    box-shadow: 0px 0px 30px 0px #00335a;
+    box-shadow: 0px 0px 30px 0px #000000;
     transition: 0.5s;
 }
-
+.cargarMas{
+    margin-top: 30px;
+    border-radius: 0;
+    background-color: #000000;
+    border: none;
+    font-weight: bold;
+}
+.cargarMas:hover{
+    transform: scale(1.1);
+    background: #161616;
+    /* ejex ejey borrosidad alcance color*/
+    box-shadow: 0px 0px 30px 0px #000000;
+    transition: 0.5s;
+}
+@media(max-width:900px) {
+    .itemsBox {
+        background: #ffffff;
+        width: calc(33% - 20px);
+        margin: 10px;
+    }
+}
 @media(max-width:750px) {
     .itemsBox {
         background: #ffffff;
         width: calc(50% - 20px);
         margin: 10px;
     }
-
-    .carousel-inner img {
+    .carrusel{
         height: 400px;
+        transition: 1s;
+    }
+    .carrusel img {
+        height: 400px;
+        transition: 1s;
     }
     .bienvenidaContainer{
         display: grid;
@@ -120,8 +226,13 @@ h1 {
         width: calc(100% - 20px);
         margin: 10px;
     }
-    .carousel-inner img{
+    .carrusel{
         height: 300px;
+        transition: 1s;
+    }
+    .carrusel img {
+        height: 300px;
+        transition: 1s;
     }
     .bienvenidaItems img{
         display: none;

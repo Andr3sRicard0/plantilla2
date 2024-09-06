@@ -7,7 +7,7 @@ a{
     transition: 0.5s;
 }
 a:hover{
-    background: #00223C;
+    background: transparent;
     color: #4fbeff;
     transition: 0.5s;
 }
@@ -16,22 +16,26 @@ a:hover{
     top: 0;
     width: 100%;
     position: fixed;
-    background: #00223C;
+    background: transparent;
     display: flex;
     height: 58px;
+    transition: background-color 0.5s ease; /* Transición suave */
+}
+.navbarBox.scrolled, .navbarBox.scrolled button {
+    background-color: #000000; /* Color de fondo cuando se hace scroll */
 }
 .navbarBox button{
     display: none;
     margin-left: auto;
-    background: #00223C;
+    background: transparent;
     padding-right: 30px;
     border: none;
     color: #ffffff;
     font-size: 35px;
-    transition: 0.5s;
+    transition: background-color 0.5s ease; /* Transición suave */
 }
 .navbarBox button:hover{
-    color: #4fbeff;
+    color: #a0a0a0;
     transition: 0.5s;
 }
 .navbarItems{
@@ -60,7 +64,7 @@ a:hover{
     transition: 0.5s;
 }
 .navbarSubtitles:hover{
-    color: #4fbeff;
+    color: #a0a0a0;
     transition: 0.5s;
 }
 @media (max-width: 750px){
@@ -69,13 +73,16 @@ a:hover{
     }
     .desplegarSubtitles.show{
         position: absolute;
-        background: #0d3455;
+        background: #1f1f1f;
         top: 58px;
         width: 200px;
-        height: 91vh;
+        height: 92vh;
         display: block;
     }
     .desplegarSubtitles.hide{
         display: none;
+    }
+    a:hover{
+        background: #000000;
     }
 }

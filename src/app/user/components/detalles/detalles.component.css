@@ -1,18 +1,21 @@
 body {
-    background: #FFFAE4;
+    background: #eeeeee;
 }
 
 h1 {
-    color: #00223C;
+    color: #000000;
 }
 
  p {
     font-size: 20px;
 }
-
+.espacio{
+    position: relative;
+    bottom: 24px;
+    height: 58px;
+    background: #000000;
+}
 .detallesBox {
-    border: 2px dashed #00223C;
-    border-radius: 10px;
     display: flex;
     width: 95%;
     margin: auto;
@@ -24,9 +27,8 @@ h1 {
     font-weight: bold;
 }
 .itemContainer {
-    border-radius: 10px;
+    border: 1px solid #000000;
     display: grid;
-    padding: 10px;
     width: 50%;
 }
 
@@ -37,9 +39,20 @@ h1 {
 }
 
 .buttonStyle {
+    border: none;
+    border-radius: 0;
     margin: 10px;
     height: 70px;
     width: 50%;
+    background: #000000;
+    font-weight: bold;
+    transition: 0.5s;
+}
+.buttonStyle:hover{
+    border: 1px solid #000000;
+    background: #ffffff;
+    color: #000000;
+    transition: 0.5s;
 }
 
 .zoomContainer {
@@ -52,7 +65,6 @@ h1 {
     cursor:zoom-in;
     width: 100%;
     height: 500px;
-    border-radius: 10px;
 }
 
 .zoomLens {

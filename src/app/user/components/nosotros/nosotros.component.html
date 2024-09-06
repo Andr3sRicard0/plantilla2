@@ -1,26 +1,14 @@
-<!--Carousel-->
 <section>
-    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active" *ngFor="let carrousel of dataCarrousel">
-                <img loading="eager" src="{{carrousel.imagenUrl}}" alt="...">
-                <div class="carousel-caption d-md-block d-none">
-                    <h5 [ngStyle]="{'color': carrousel.color}">{{carrousel.nombre}}</h5>
-                    <p [ngStyle]="{'color': carrousel.color}">{{carrousel.parrafo}}</p>
-                </div>
-            </div>
+    <!--Carrousel Inicio-->
+    <div class="carrusel">
+        <div class="slideItem active">
+            <img src="../../../../assets/img/carrusel/quito.webp" alt="">
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
-            data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
-            data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
+        <div class="slideItem" *ngFor="let carrusel of dataCarrousel">
+            <img src="{{carrusel.imagenUrl}}" alt="{{carrusel.nombre}}">
+        </div>
     </div>
+    <!--Carrousel Fin-->
 </section>
 
 <body>
@@ -38,7 +26,7 @@
                 <div class="aboutItems text-center">
                     <img src="../../../../assets/img/logos/smgLogo512.png" alt="">
                 </div>
-                <div class="aboutItems">
+                <div class="aboutItems aboutItemsBackground2">
                     <h2>SMG CONFECCIONES</h2>
                     <p>
                         En <strong>SMG CONFECCIONES</strong> somos un equipo apasionado de profesionales comprometidos
@@ -63,7 +51,7 @@
     <section id="contactanos">
         <div class="container-fluid">
             <div class="aboutBox">
-                <div class="aboutItems">
+                <div class="aboutItems aboutItemsBackground2">
                     <!--<iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d705.2991647674355!2d-78.53978560817765!3d-0.26829685122855473!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d5a23b90a90ea3%3A0xdd51f9a8349cbc39!2sLa%20Arcadia%2C%20Quito!5e0!3m2!1ses!2sec!4v1725419186664!5m2!1ses!2sec"
                         style="border:0;" allowfullscreen="" loading="lazy"
@@ -85,37 +73,12 @@
                             </span>
                         </a>
                         <br>
-                        <a href="https://wa.me/593983101686?text=Hola%20SMG,%20quisiera%20saber%20m%C3%A1s%20sobre%20sus%20productos!!!!" target="_blank">
+                        <a href="https://wa.me/593983101686?text=Hola%20SMG,%20quisiera%20saber%20m%C3%A1s%20sobre%20sus%20productos!!!!"
+                            target="_blank">
                             <span class="link-text">
                                 <h4 class="mt-3">Whatsapp <i class="fa-brands fa-whatsapp"></i></h4>
                             </span>
                         </a>
-                    </div>
-                    <div class="text-center">
-                        <form id="contactForm" action="https://formsubmit.co/smgropadeportiva@gmail.com"
-                            method="POST">
-                            <h4>Deseas Contactar por Email <i class="fa-solid fa-envelope"></i></h4>
-
-                            <label for="nombre">Ingrese su Nombre o Empresa.</label>
-                            <input id="nombre" name="nombre" type="text" placeholder="Ingrese su Nombre o Empresa."
-                                maxlength="50" required>
-
-                            <label for="contactame">Ingrese su Correo o Número para comunicarnos con usted.</label>
-                            <input id="contactame" name="contactame" type="text"
-                                placeholder="Ingrese su Correo o Número para comunicarnos con usted." maxlength="50"
-                                required>
-
-                            <label for="asunto">Indique el Asunto por el que desea contactarnos.</label>
-                            <textarea id="asunto" name="asunto"
-                                placeholder="Indique el Asunto por el que desea contactarnos." required></textarea>
-
-                            <!-- Cambia el tipo de botón a "button" y usa (click) para la función de validación -->
-                            <button class="btn btn-outline-primary" type="button" (click)="validarYEnviar()">Enviar
-                                Correo</button>
-
-                            <input type="hidden" name="_next" value="https://smgmodadeportiva.netlify.app/home/dashboard/nosotros">
-                            <input type="hidden" name="_captcha" value="false">
-                        </form>
                     </div>
                 </div>
             </div>

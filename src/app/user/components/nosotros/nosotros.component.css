@@ -1,33 +1,52 @@
-body{
-    background: #FFFAE4;
-}
-h1{
-    color: #00223C;
-}
-.carousel-inner img {
+/*Carrusel Inicio*/
+.carrusel {
     width: 100%;
     height: 500px;
-    object-fit: cover;
+    position: relative;
+    overflow: hidden;
+    transition: 1s;
 }
-.carousel {
-    z-index: 1;
+.carrusel img {
+    object-fit: cover;
+    position: absolute;
+    width: 100%;
+    height: 500px;
+    opacity: 0;
+    transition: opacity 2s ease;
+}
+.slideItem.active img{
+    opacity: 1;
+}
+.slideItem.active .textBoxCarousel{
+    opacity: 1;
+}
+/*Carrusel Fin*/
+body{
+    background: #eeeeee;
+}
+h1{
+    color: #000000;
 }
 .aboutBox{
-    padding: 20px;
-    margin-bottom: 20px;
-    border: 5px dashed #00223C;
-    background: #ffffff;
+    border: 1px solid #000000;
+    background: #141414;
     width: 100%;
     display: flex;
 }
 .aboutItems{
-    display: grid;
     padding: 10px;
+    display: grid;
+    align-items: center;
     width: 50%;
 }
+.aboutItemsBackground2{
+    background: #ffffff;
+}
 .aboutItems img{
-    width: 100%;
-    height: 100%;
+    display: block;
+    margin: 0 auto;
+    width: 350px;
+    height: 80%;
 }
 .aboutItems input{
     width: 100%;
@@ -66,12 +85,12 @@ iframe{
 }
 a{
     display: inline-block;
-    color: #00223C;
+    color: #ffffff;
     text-decoration: none;
     transition: 1s;
 }
 a:hover{
-    color: #496e8a;
+    color: #afafaf;
     transition: 0.5s;
 }
 @media(max-width:750px) {
@@ -91,6 +110,10 @@ a:hover{
 }
 
 @media(max-width:550px) {
+    .aboutItems img{
+        width: 100%;
+        height: 70%;
+    }
     .carousel-inner img{
         height: 300px;
     }
