@@ -1,7 +1,7 @@
 .separadorBox {
     width: 100%;
     height: 50px;
-    background: #000000;
+    background: #1d1d1d;
     overflow: hidden; /* Para ocultar cualquier contenido que desborde */
     position: relative;
 }
@@ -18,7 +18,9 @@
 }
 
 .scroll-content img {
-    height: 50px;
+    position: relative;
+    bottom: 15.1px;
+    height: 80px;
     margin-right: 100px; /* Espacio entre las imágenes */
     transition: 0.5s;
 }

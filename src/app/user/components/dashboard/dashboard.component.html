@@ -14,10 +14,10 @@
     <!--Smg Bienvenida-->
     <section id="inicio">
         <h1 class="text-center">SMG CLOTHES</h1>
-        <div class="container">
+        <div class="container-fluid">
             <div class="bienvenidaContainer">
-                <div class="bienvenidaItems">
-                    <img src="../../../../assets/img/logos/smgLogo2.png" alt="">
+                <div class="bienvenidaItems bienvenidaColor">
+                    <img src="../../../../assets/img/logos/logoSMG.png" alt="">
                 </div>
                 <div class="bienvenidaItems">
                     <div class="container">
@@ -44,6 +44,7 @@
                 <div class="itemsBox text-center" *ngFor="let mercancia of displayedMercaderia">
                     <img src="{{mercancia.imagenUrl}}" alt="">
                     <p><strong>{{mercancia.nombre}}</strong></p>
+                    <p>{{mercancia.detallesCorto}}</p>
                     <p><strong>Precio: </strong>$ {{mercancia.precio}}</p>
                     <a class="btn btn-primary" href="home/dashboard/detalles/{{mercancia.id}}">Más Detalles
                     </a>
