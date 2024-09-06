@@ -17,10 +17,28 @@
             <!--<p class="infoStyle">Disponible para entregas en Quito sin costo adicional. Para envíos a otras provincias,
                 se aplicará un costo extra.</p>-->
             <div class="buttonsContainer">
-                <a href="home" class="btn btn-danger buttonStyle d-flex align-items-center justify-content-center">Cancelar <i class="fa-solid fa-ban ms-2"></i></a>
+                <a href="home" class="btn btn-danger buttonStyle d-flex align-items-center justify-content-center mb-2">Cancelar <i class="fa-solid fa-ban ms-2"></i></a>
                 <a href="https://wa.me/593983101686?text=Hola%20SMG,%20deseo%20este%20producto: {{mercancia.nombre}}" target="_blank" class="btn btn-success buttonStyle d-flex align-items-center justify-content-center">Solicitar por Whatsapp <i class="fa-brands fa-whatsapp ms-2"></i></a>
             </div>
         </div>
     </div>
+    <!--Mercaderia-->
+    <section id="mercaderia">
+        <h1 class="text-center mb-1">Sigue Revisando Nuestros Diseños</h1>
+        <div class="container-fluid">
+            <div class="containerBox">
+                <div class="itemsBox text-center" *ngFor="let mercancia of displayedMercaderia">
+                    <img src="{{mercancia.imagenUrl}}" alt="">
+                    <p><strong>{{mercancia.nombre}}</strong></p>
+                    <p><strong>Precio: </strong>$ {{mercancia.precio}}</p>
+                    <a class="btn btn-primary" href="home/dashboard/detalles/{{mercancia.id}}">Más Detalles
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="container p-2 text-center">
+            <button id="contactanos" class="btn btn-danger cargarMas" (click)="loadMoreMercaderiaData()">Cargar Más</button>
+        </div>
+    </section>
     <br>
 </body>

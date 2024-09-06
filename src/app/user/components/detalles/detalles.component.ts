@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import Swal from 'sweetalert2';
 import * as XLSX from 'xlsx';
 
 @Component({
@@ -13,6 +14,9 @@ export class DetallesComponent {
   id: string | null = null;
   dataMercancia: any[] = [];
   mercancia: any = null; // Variable para almacenar el objeto específico
+  dataMercaderia: any[] = [];
+  displayedMercaderia: any[] = [];
+  itemsToLoad = 4;
 
   constructor(
     private http: HttpClient, 
@@ -23,6 +27,7 @@ export class DetallesComponent {
   ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get('id'); // Captura el 'id' de la ruta
     this.loadMercanciaData();
+    this.loadMercaderiaData();
   }
 
   loadMercanciaData() {
@@ -37,7 +42,30 @@ export class DetallesComponent {
       this.findMercanciaById();
     });
   }
+  loadMercaderiaData() {
+    this.http.get('assets/bd/mercaderiaData.xlsx', { responseType: 'arraybuffer' }).subscribe((response) => {
+      const data = new Uint8Array(response);
+      const workbook = XLSX.read(data, { type: 'array' });
+      const firstSheetName = workbook.SheetNames[0];
+      const worksheet = workbook.Sheets[firstSheetName];
 
+      this.dataMercaderia = XLSX.utils.sheet_to_json(worksheet);
+      this.displayedMercaderia = this.dataMercaderia.slice(0, this.itemsToLoad); // Mostramos los primeros 4 elementos
+    });
+  }
+  loadMoreMercaderiaData() {
+    const currentLength = this.displayedMercaderia.length;
+    const nextLength = currentLength + this.itemsToLoad;
+    if (currentLength >= this.dataMercaderia.length) {
+      Swal.fire({
+        title: "No hay más items que cargar",
+        text: "Son todos los artículos disponibles",
+        icon: "info"
+      });
+      return;
+    }
+    this.displayedMercaderia = this.dataMercaderia.slice(0, nextLength);
+  }
   findMercanciaById() {
     if (this.id) {
       const idAsNumber = Number(this.id); // Convierte el id a número
