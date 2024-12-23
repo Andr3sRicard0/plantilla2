@@ -26,6 +26,15 @@ h1 {
     font-size: 12px;
     font-weight: bold;
 }
+.productosContainer{
+    border: 1px solid #000000;
+    display: flex;
+    width: 50%;
+    align-items: start;
+}
+.imagesAll{
+    display: grid;
+}
 .itemContainer {
     border: 1px solid #000000;
     display: grid;
@@ -103,13 +112,19 @@ h1 {
     box-shadow: 3px 3px 3px 3px #494949;
     overflow: hidden; /* Asegúrate de que el efecto no desborde el contenedor */
 }
-
-.itemsBox:hover img {
+.productosVariados{
+    cursor: pointer;
+    margin: 1px;
+    height: 80px;
+    width: 100px;
+    border: 1px solid #000000;
+}
+.itemsBox:hover .productoInicial {
     transform: scale(0.9);
     border: 3px dashed #000000;
     transition: transform 0.4s ease;
 }
-.itemsBox img {
+.itemsBox .productoInicial {
     display: block;
     margin: auto;
     width: 100%;
@@ -145,6 +160,32 @@ h1 {
     box-shadow: 0px 0px 30px 0px #000000;
     transition: 0.5s;
 }
+.itemsBox:hover img {
+    transform: scale(0.9);
+    border: 3px dashed #000000;
+    transition: transform 0.4s ease;
+}
+.itemsBox img {
+    display: block;
+    margin: auto;
+    width: 100%;
+    height: 300px;
+    transition: transform 0.4s ease, border 0.4s ease;
+}
+/*controles de la bar*/
+.imagesAll::-webkit-scrollbar {
+    height: 8px; /* Altura de la barra de desplazamiento horizontal */
+    
+}
+.imagesAll::-webkit-scrollbar-thumb {
+    background-color: #888; /* Color del "pulgar" (parte que se arrastra) */
+    border-radius: 10px; /* Bordes redondeados */
+}
+.imagesAll::-webkit-scrollbar-track {
+    margin-top: 5px;  /* Separación en la parte superior del canal */
+    margin-bottom: 5px; /* Separación en la parte inferior del canal */
+}
+
 @media(max-width:900px) {
     .itemsBox {
         background: #ffffff;
@@ -153,6 +194,12 @@ h1 {
     }
 }
 @media (max-width: 750px) {
+    .imagesAll {
+        display: flex;
+        overflow-x: auto;
+        gap: 10px;
+    }
+    
     .itemsBox {
         background: #ffffff;
         width: calc(50% - 20px);
@@ -161,7 +208,10 @@ h1 {
     .detallesBox {
         display: grid;
     }
-
+    .productosContainer{
+        display: grid;
+        width: 100%;
+    }
     .itemContainer {
         width: 100%;
     }
@@ -171,7 +221,7 @@ h1 {
     }
     .zoomImage{
         width: 100%;
-        height: 300px;
+        height: 100%;
     }
 }
 @media (max-width: 500px) {

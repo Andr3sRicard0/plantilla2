@@ -16,6 +16,7 @@ img{
     width: 200px;
 }
 .footer{
+    overflow: hidden;
     position: absolute;
     width: 100%;
     background: #000000;
@@ -51,14 +52,21 @@ p{
     color: #ffffff;
     font-size: 18px;
 }
-@media (max-width:500px){
+@media (max-width:550px){
     .footerBox{
         display: grid;
     }
     .footerItems{
         width: 100%;
     }
+    p{
+        font-size: 15px;
+    }
     a{
+        font-size: 15px;
         padding: 10px;
+    }
+    img{
+        width: 150px;
     }
 }

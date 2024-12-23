@@ -3,7 +3,7 @@
     <div class="navbarItems">
         <div class="navbarTitles">
             <a href="">
-                <img src="../../../../assets/img/logos/logoSMG180x180.png" alt="">
+                <img src="/assets/img/logos/logoSMG180x180.webp" alt="">
             </a>
         </div>
     </div>
@@ -11,25 +11,25 @@
     <div [ngClass]="{'show': menuOpen, 'hide': !menuOpen}" class="desplegarSubtitles">
         <!--Item-->
         <div class="navbarItems">
-            <a href="home/dashboard#inicio"><div class="navbarSubtitles">
+            <a (click)="cerrarMenu()" href="home/dashboard#inicio"><div class="navbarSubtitles">
                 Inicio <i class="fa-solid fa-house-user"></i>
             </div></a>
         </div>
         <!--Item-->
         <div class="navbarItems">
-            <a href="home/dashboard#mercaderia"><div class="navbarSubtitles">
+            <a (click)="cerrarMenu()" href="home/dashboard#mercaderia"><div class="navbarSubtitles">
                 Mercaderia <i class="fa-solid fa-shirt"></i>
             </div></a>
         </div>
         <!--Item-->
         <div class="navbarItems">
-            <a href="home/dashboard/nosotros"><div class="navbarSubtitles">
+            <a (click)="cerrarMenu()" href="home/dashboard/nosotros"><div class="navbarSubtitles">
                 Nosotros <i class="fa-solid fa-user"></i>
             </div></a>
         </div>
         <!--Item-->
         <div class="navbarItems">
-            <a href="home/dashboard/nosotros#contactanos"><div class="navbarSubtitles">
+            <a (click)="cerrarMenu()" href="home/dashboard/nosotros#contactanos"><div class="navbarSubtitles">
                 Contactanos <i class="fa-solid fa-phone"></i>
             </div></a>
         </div>

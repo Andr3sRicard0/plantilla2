@@ -10,7 +10,7 @@ import Swal from 'sweetalert2';
 })
 export class NosotrosComponent {
   @ViewChild('mensajeWhatsapp') mensajeWhatsapp!: ElementRef<HTMLTextAreaElement>;
-  phoneNumber: number = 593984677719;
+  phoneNumber: number = 593983101686;
   currentSlide = 0;
   slides: HTMLElement[] = [];
   dataCarrousel: any[] = [];

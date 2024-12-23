@@ -2,10 +2,16 @@
     <br>
     <div class="espacio"></div>
     <div class="detallesBox" *ngIf="mercancia">
-        <div class="itemContainer">
+        <div class="productosContainer">
+            <div class="imagesAll">
+                <!-- Agrega el evento (click) -->
+                <img *ngFor="let image of idImagesMercancia" class="productosVariados" [src]="image" alt="Producto"
+                    (click)="onImageClick(image)">
+            </div>
             <div class="zoomContainer">
-                <img src="{{mercancia.imagenUrl}}" alt="Producto" class="zoomImage" (mousemove)="zoomIn($event)"
-                    (mouseleave)="zoomOut()">
+                <!-- La imagen que se mostrará inicialmente y cambiará al hacer clic en las miniaturas -->
+                <img class="productoInicial" [src]="selectedImage" alt="Producto" class="zoomImage"
+                    (mousemove)="zoomIn($event)" (mouseleave)="zoomOut()">
                 <div class="zoomLens" #zoomLens></div>
             </div>
         </div>
@@ -19,7 +25,8 @@
             <div class="buttonsContainer">
                 <a href="https://wa.me/593983101686?text=Hola%20SMG,%20deseo%20este%20producto: {{mercancia.nombre}}"
                     target="_blank"
-                    class="btn btn-success buttonStyle d-flex align-items-center justify-content-center mb-2">Solicitar por
+                    class="btn btn-success buttonStyle d-flex align-items-center justify-content-center mb-2">Solicitar
+                    por
                     Whatsapp <i class="fa-brands fa-whatsapp ms-2"></i></a>
                 <a href="home"
                     class="btn btn-danger buttonStyle d-flex align-items-center justify-content-center">Cancelar <i

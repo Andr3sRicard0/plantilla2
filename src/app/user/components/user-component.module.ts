@@ -6,10 +6,6 @@ import { MenuModule } from '../menu/menu.module';
 import { RouterModule } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HttpClientModule } from '@angular/common/http';
-import { DetallesHombreComponent } from './detalles-hombre/detalles-hombre.component';
-import { DetallesMujerComponent } from './detalles-mujer/detalles-mujer.component';
-import { DetallesNinosComponent } from './detalles-ninos/detalles-ninos.component';
-import { AdminComponentModule } from 'src/app/admin/components/admin-component.module';
 import { DetallesComponent } from './detalles/detalles.component';
 import { NosotrosComponent } from './nosotros/nosotros.component';
 import { DesignModule } from '../design/design.module';
@@ -18,9 +14,6 @@ import { DesignModule } from '../design/design.module';
     HomeComponent,
     NotFoundComponent,
     DashboardComponent,
-    DetallesHombreComponent,
-    DetallesMujerComponent,
-    DetallesNinosComponent,
     DetallesComponent,
     NosotrosComponent
   ],
@@ -33,8 +26,7 @@ import { DesignModule } from '../design/design.module';
     RouterModule,
     MenuModule,
     HttpClientModule,
-    DesignModule,
-    AdminComponentModule
+    DesignModule
   ]
 })
 export class UserComponentModule { }

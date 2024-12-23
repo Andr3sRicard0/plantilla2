@@ -13,9 +13,12 @@ export class DetallesComponent {
   @ViewChild('zoomLens', { static: false }) zoomLens!: ElementRef;
   id: string | null = null;
   dataMercancia: any[] = [];
-  mercancia: any = null; // Variable para almacenar el objeto específico
+  mercancia: any = null;
   dataMercaderia: any[] = [];
   displayedMercaderia: any[] = [];
+  imagesData: any[] = [];
+  idImagesMercancia: any = null;
+  selectedImage: string | null = null; // Variable para almacenar la imagen seleccionada
   itemsToLoad = 4;
 
   constructor(
@@ -23,11 +26,12 @@ export class DetallesComponent {
     private route: ActivatedRoute,
     private router: Router
   ) { }
-
+  
   ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get('id'); // Captura el 'id' de la ruta
     this.loadMercanciaData();
     this.loadMercaderiaData();
+    this.loadImagesData();
   }
 
   loadMercanciaData() {
@@ -40,6 +44,18 @@ export class DetallesComponent {
 
       this.dataMercancia = XLSX.utils.sheet_to_json(worksheet);
       this.findMercanciaById();
+    });
+  }
+  loadImagesData(){
+    // Ruta al archivo Excel en la carpeta 'assets'
+    this.http.get('assets/bd/mercaderiaImagenes.xlsx', { responseType: 'arraybuffer' }).subscribe((response) => {
+      const data = new Uint8Array(response);
+      const workbook = XLSX.read(data, { type: 'array' });
+      const firstSheetName = workbook.SheetNames[0];
+      const worksheet = workbook.Sheets[firstSheetName];
+
+      this.imagesData = XLSX.utils.sheet_to_json(worksheet);
+      this.findImagesById();
     });
   }
   loadMercaderiaData() {
@@ -70,6 +86,25 @@ export class DetallesComponent {
       return;
     }
     this.displayedMercaderia = this.dataMercaderia.slice(0, nextLength);
+  }
+  findImagesById() {
+    if (this.id) {
+      const idAsNumber = Number(this.id);
+      const selectedRow = this.imagesData.find(item => item.id === idAsNumber);
+      if (selectedRow) {
+        this.idImagesMercancia = Object.values(selectedRow).filter(value => value && value.toString().includes('/assets/img/'));
+        // Establece la primera imagen como seleccionada por defecto
+        if (this.idImagesMercancia.length > 0) {
+          this.selectedImage = this.idImagesMercancia[0]; // Imagen inicial
+        }
+      } else {
+        this.router.navigate(['/not-found']);
+      }
+    }
+  }
+  onImageClick(image: string): void {
+    // Actualiza la imagen seleccionada al hacer clic
+    this.selectedImage = image;
   }
   findMercanciaById() {
     if (this.id) {

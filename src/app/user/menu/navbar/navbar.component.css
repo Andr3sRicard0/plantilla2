@@ -3,11 +3,6 @@ a{
     color: #ffffff;
     transition: 0.5s;
 }
-a:hover{
-    background: transparent;
-    color: #4fbeff;
-    transition: 0.5s;
-}
 .navbarBox{
     z-index: 2;
     top: 0;
@@ -78,8 +73,8 @@ a:hover{
         position: absolute;
         background: #1f1f1f;
         top: 58px;
-        width: 200px;
-        height: 92vh;
+        width: 170px;
+        height: 95vh;
         display: block;
     }
     .desplegarSubtitles.hide{
@@ -87,5 +82,13 @@ a:hover{
     }
     a:hover{
         background: #000000;
+    }
+}
+@media (max-width: 500px){
+    .navbarSubtitles{
+        font-size: 14px;
+    }
+    .desplegarSubtitles.show{
+        width: 150px;
     }
 }

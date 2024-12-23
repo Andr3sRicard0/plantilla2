@@ -1,18 +1,46 @@
-body{
-    background: #FFFAE4;
+body {
+    background: #eeeeee;
 }
-.notFoundBox{
+
+.nav {
+    position: fixed;
     width: 100%;
+    height: 58px;
+    background: #000000;
 }
-.notFoundBox img{
-    width: 60%;
-    display: block;
-    margin: auto;
+
+.notFoundBox {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
 }
-@media (max-width:750px){
-    .notFoundBox img{
-        width: 100%;
-        display: block;
-        margin: auto;
+.itemsBox {
+    text-align: center;
+}
+
+.notFoundBox h1 {
+    margin: 0;
+}
+.notFoundBox img {
+    border-radius: 50%;
+    background: #000000;
+}
+.btnStyle{
+    background: #000000;
+    color: #ffffff;
+    font-weight: bold;
+    border: none;
+    height: 50px;
+    transition: 0.5s;
+}
+.btnStyle:hover{
+    box-shadow: 0px 0px 20px 1px #000000;
+    transition: 0.5s;
+}
+@media (max-width: 750px) {
+    .notFoundBox img {
+        width: 50%;
     }
 }
